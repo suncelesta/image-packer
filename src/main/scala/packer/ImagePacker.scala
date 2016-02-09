@@ -22,7 +22,7 @@ object ImagePacker {
 
     val weights = for (i <- 1 to count) yield Math.random()
 
-    pack(canvasId, imageId, weights, maxDistanceFactor, centerX, centerY, width, height)
+    pack(canvasId, imageId, weights.distinct.sorted.reverse, maxDistanceFactor, centerX, centerY, width, height)
   }
 
   @JSExport
